@@ -6,22 +6,29 @@ import {
   Image,
   StyleSheet,
   Dimensions,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
-import { Button, Input } from './component'
+import {Button, Input} from './component';
 
 const Login = () => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#b2dfdb'}}>
-      <View>
-        <Image
-          source={require('./assests/login.png')}
-          style={styles.logoStyle}
-        />
-       <Input holder='Type your e-mail please...'/>
-       <Input holder='Enter your password please...'/>
+      <KeyboardAvoidingView style={{flex: 1}} behavior={Platform.OS == 'android' ? null : 'padding'}>
+        <ScrollView style={{flex: 1}} bounces={false}>
+          <View>
+            <Image
+              source={require('./assests/login.png')}
+              style={styles.logoStyle}
+            />
+            <Input holder="Type your e-mail please..." />
+            <Input holder="Enter your password please..." />
 
-       <Button />
-      </View>
+            <Button />
+          </View>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -32,7 +39,7 @@ const styles = StyleSheet.create({
   logoStyle: {
     resizeMode: 'contain',
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height * 0.40,
-    tintColor: 'grey' 
+    height: Dimensions.get('window').height * 0.4,
+    tintColor: 'grey',
   },
 });
