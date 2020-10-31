@@ -85,7 +85,7 @@ const News = () => {
 
   return (
     <SafeAreaView>
-      <FlatList data={news_data} renderItem={renderNewsData} />
+      <FlatList data={news_data} renderItem={renderNewsData} keyExtractor={(item, index) => item.id.toString() } />
     </SafeAreaView>
   );
 };
