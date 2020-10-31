@@ -93,7 +93,7 @@ const News = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView horizontal>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {banner_data.map((banner_item) => {
           return (
             <Image
