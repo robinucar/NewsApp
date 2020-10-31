@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#eceff1',
     padding: 5,
-    margin: 5,
+    margin: 10,
   },
   title: {
     fontWeight: 'bold',
