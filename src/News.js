@@ -90,9 +90,8 @@ const banner_data = [
 
 const News = () => {
   const renderNewsData = ({item}) => <NewsCard news={item} />;
-
-  return (
-    <SafeAreaView>
+  const listHeader = () => {
+    return (
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {banner_data.map((banner_item) => {
           return (
@@ -108,10 +107,16 @@ const News = () => {
           );
         })}
       </ScrollView>
+    );
+  };
+
+  return (
+    <SafeAreaView>
       <FlatList
         data={news_data}
         renderItem={renderNewsData}
         keyExtractor={(item, index) => item.id.toString()}
+        ListHeaderComponent={listHeader}
       />
     </SafeAreaView>
   );
